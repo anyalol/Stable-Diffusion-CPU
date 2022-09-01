@@ -1,7 +1,7 @@
 import gradio as gr
 #import torch
 #from torch import autocast // only for GPU
-from datasets import load_dataset
+
 from PIL import Image
 
 import os
@@ -19,24 +19,26 @@ device="cpu"
 pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=YOUR_TOKEN)
 pipe.to(device)
 
-#When running locally, you won`t have access to this, so you can remove this part
-word_list_dataset = load_dataset("stabilityai/word-list", data_files="list.txt", use_auth_token=YOUR_TOKEN)
-word_list = word_list_dataset["train"]['text']
+gallery = gr.Gallery(label="Generated images", show_label=False, elem_id="gallery").style(grid=[2], height="auto")
 
 def infer(prompt):
-    for filter in word_list:
-        if re.search(rf"\b{filter}\b", prompt):
-            raise gr.Error("Unsafe content found. Please try again with different prompts.")
+    
     
     #image = pipe(prompt, init_image=init_image)["sample"][0]
-    image = pipe(prompt)["sample"][0]
-    
-    return image
+    images_list = pipe([prompt] * 1)
+    images = []
+    safe_image = Image.open(r"unsafe.png")
+    for i, image in enumerate(images_list["sample"]):
+        if(images_list["nsfw_content_detected"][i]):
+            images.append(safe_image)
+        else:
+            images.append(image)
+    return images
 
 print("Great sylvain ! Everything is working fine !")
 
 title="Stable Diffusion CPU"
 description="Stable Diffusion example using CPU and HF token. Warning: Slow process... ~5/10 min inference time" 
 
-gr.Interface(fn=infer, inputs="text", outputs="image",title=title,description=description).launch(enable_queue=True)
+gr.Interface(fn=infer, inputs="text", outputs=gallery,title=title,description=description).launch(enable_queue=True)
 
