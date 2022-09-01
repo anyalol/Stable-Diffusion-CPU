@@ -4,7 +4,7 @@ MY_SECRET_TOKEN=os.environ.get('HF_TOKEN_SD')
 
 import gradio as gr
 import torch
-from torch import autocast
+#from torch import autocast // only for GPU
 from PIL import Image
 from diffusers import StableDiffusionPipeline
 
