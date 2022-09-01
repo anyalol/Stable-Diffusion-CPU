@@ -1,5 +1,5 @@
 import os
-YOUR_TOKEN = os.environ.get("HF_TOKEN_SD")
+print(os.environ)
 
 import gradio as gr
 import torch
@@ -8,7 +8,7 @@ from PIL import Image
 from diffusers import StableDiffusionPipeline
 
 print("hello sylvain")
-
+YOUR_TOKEN="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"
 device="cpu"
 
 pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=YOUR_TOKEN)
