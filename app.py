@@ -14,7 +14,11 @@ pipe.to(device)
 def infer(prompt):
     image = pipe(prompt)["sample"][0]
     return image
-  
-gr.Interface(fn=infer, inputs="text", outputs="image").launch()
 
 print("Great sylvain ! Everything is working fine !")
+
+title="Stable Diffusion CPU"
+description="Stable Diffusion example using CPU and HF token. Warning: Slow process..." 
+
+gr.Interface(fn=infer, inputs="text", outputs="image").launch()
+
