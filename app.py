@@ -8,7 +8,7 @@ print("hello sylvain")
 YOUR_TOKEN="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"
 
 pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=YOUR_TOKEN)
-pipe.to("cuda")
+pipe.to("cpu")
 
 def process(name):
   return "hello " + name
