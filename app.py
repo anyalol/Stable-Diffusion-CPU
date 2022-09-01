@@ -7,7 +7,7 @@ import torch
 #from torch import autocast // only for GPU
 from PIL import Image
 from diffusers import StableDiffusionPipeline
-from diffusers import StableDiffusionImg2ImgPipeline
+#from diffusers import StableDiffusionImg2ImgPipeline
 
 print("hello sylvain")
 
@@ -15,7 +15,7 @@ YOUR_TOKEN=MY_SECRET_TOKEN
 
 device="cpu"
 
-pipe = StableDiffusionImg2ImgPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=YOUR_TOKEN)
+pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=YOUR_TOKEN)
 pipe.to(device)
 
 def infer(prompt, init_image):
