@@ -1,5 +1,8 @@
+from dotenv import load_dotenv
+load_dotenv()
 import os
-os.environ.getattribute("HF_TOKEN_SD")
+YOUR_TOKEN = os.environ.get("HF_TOKEN_SD")
+
 import gradio as gr
 import torch
 from torch import autocast
@@ -7,8 +10,6 @@ from PIL import Image
 from diffusers import StableDiffusionPipeline
 
 print("hello sylvain")
-
-YOUR_TOKEN=HF_TOKEN_SD
 
 device="cpu"
 
