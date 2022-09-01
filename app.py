@@ -1,3 +1,4 @@
+import gradio as gr
 import torch
 from torch import autocast
 from diffusers import StableDiffusionPipeline
@@ -7,5 +8,7 @@ device = "cpu"
 pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=YOUR_TOKEN)
 pipe.to(device)
 
-
-print("hello")
+def process :
+  return "hello"
+  
+gr.Interface(fn=process, inputs="text", outputs="text").launch()
