@@ -1,12 +1,14 @@
+import gradio as gr
+import torch
+#from torch import autocast // only for GPU
+from PIL import Image
+
 import os
 MY_SECRET_TOKEN=os.environ.get('HF_TOKEN_SD')
 os.system("git clone https://github.com/huggingface/diffusers")
 import sys
 sys.path.append("diffusers")
-import gradio as gr
-import torch
-#from torch import autocast // only for GPU
-from PIL import Image
+
 #from diffusers import StableDiffusionPipeline
 from diffusers import StableDiffusionImg2ImgPipeline
 
