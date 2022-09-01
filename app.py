@@ -1,5 +1,6 @@
 import os
-print(os.environ)
+print(os.environ.get('HF_TOKEN_SD'))
+
 
 import gradio as gr
 import torch
