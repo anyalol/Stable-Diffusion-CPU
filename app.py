@@ -6,6 +6,7 @@ import gradio as gr
 import torch
 #from torch import autocast // only for GPU
 from PIL import Image
+from diffusers import StableDiffusionPipeline
 from diffusers import StableDiffusionImg2ImgPipeline
 
 print("hello sylvain")
