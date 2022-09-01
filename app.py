@@ -18,12 +18,11 @@ pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", 
 pipe.to(device)
 
 def infer(prompt, init_image):
-    if init_image != None:
-        init_image = init_image.resize((512, 512))
-        init_image = preprocess(init_image)
-        image = pipe(prompt, init_image=init_image)["sample"][0]
-    else:
-        image = pipe(prompt)["sample"][0]
+    
+    init_image = init_image.resize((512, 512))
+    init_image = preprocess(init_image)
+    image = pipe(prompt, init_image=init_image)["sample"][0]
+    
     return image
 
 print("Great sylvain ! Everything is working fine !")
