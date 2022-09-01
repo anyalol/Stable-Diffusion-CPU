@@ -19,8 +19,6 @@ pipe.to(device)
 
 def infer(prompt, init_image):
     
-    init_image = init_image.resize((512, 512))
-    init_image = preprocess(init_image)
     image = pipe(prompt, init_image=init_image)["sample"][0]
     
     return image
