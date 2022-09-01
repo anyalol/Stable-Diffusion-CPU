@@ -24,7 +24,7 @@ def infer(prompt):
 print("Great sylvain ! Everything is working fine !")
 
 title="Stable Diffusion CPU"
-description="Stable Diffusion example using CPU and HF token. Warning: Slow process..." 
+description="Stable Diffusion example using CPU and HF token. Warning: Slow process... ~5/10 min inference time" 
 
 gr.Interface(fn=infer, inputs="text", outputs="image",title=title,description=description).launch(enable_queue=True)
 
