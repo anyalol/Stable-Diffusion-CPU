@@ -1,5 +1,5 @@
 import os
-print(os.environ.get('HF_TOKEN_SD'))
+MY_SECRET_TOKEN=os.environ.get('HF_TOKEN_SD')
 
 
 import gradio as gr
@@ -9,7 +9,9 @@ from PIL import Image
 from diffusers import StableDiffusionPipeline
 
 print("hello sylvain")
-YOUR_TOKEN="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"
+
+YOUR_TOKEN=MY_SECRET_TOKEN
+
 device="cpu"
 
 pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=YOUR_TOKEN)
