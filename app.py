@@ -6,7 +6,7 @@ from diffusers import StableDiffusionPipeline
 
 print("hello sylvain")
 
-YOUR_TOKEN=env.HF_TOKEN_SD
+YOUR_TOKEN=process.env.HF_TOKEN_SD
 
 device="cpu"
 
