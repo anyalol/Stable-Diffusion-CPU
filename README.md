@@ -1,5 +1,5 @@
 ---
-title: SD Api
+title: Stable Diffusion CPU
 emoji: 🔥
 colorFrom: gray
 colorTo: blue
