@@ -1,6 +1,3 @@
-import dotenv
-from dotenv import load_dotenv
-load_dotenv()
 import os
 YOUR_TOKEN = os.environ.get("HF_TOKEN_SD")
 
