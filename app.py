@@ -5,9 +5,7 @@ from PIL import Image
 
 import os
 MY_SECRET_TOKEN=os.environ.get('HF_TOKEN_SD')
-os.system("git clone https://github.com/huggingface/diffusers")
-import sys
-sys.path.append("diffusers")
+
 
 #from diffusers import StableDiffusionPipeline
 from diffusers import StableDiffusionImg2ImgPipeline
