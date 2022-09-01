@@ -1,6 +1,6 @@
 import gradio as gr
 import torch
-
+from torch import autocast
 from diffusers import StableDiffusionPipeline
 
 YOUR_TOKEN="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"
