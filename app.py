@@ -14,8 +14,7 @@ pipe.to(device)
 def infer(prompt):
     image = pipe(prompt)["sample"][0]
     return image
-
-def process(name):
-  return "hello " + name
   
 gr.Interface(fn=infer, inputs="text", outputs="image").launch()
+
+print("Great sylvain ! Everything is working fine !")
