@@ -40,5 +40,5 @@ print("Great sylvain ! Everything is working fine !")
 title="Stable Diffusion CPU"
 description="Stable Diffusion example using CPU and HF token. <br />Warning: Slow process... ~5/10 min inference time. <b>NSFW filter enabled.</b>" 
 
-gr.Interface(fn=infer, inputs="text", outputs=gallery,title=title,description=description).launch(enable_queue=True)
+gr.Interface(fn=infer, inputs="text", outputs=gallery,title=title,description=description).queue(max_size=10).launch(enable_queue=True)
 
